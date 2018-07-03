@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Star Wars</title>
+<link href="estilo.css" rel="stylesheet">
+<script src="jquery.js"> </script>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+	<div id="header"> <a href="#home"><img src="sw.jpg"></a>  </div>
+    
+    <div id="divbusca">
+        <input id="busca" name="busca" placeholder="buscar" type="text" />
+        <select id="categoria">
+            <option value="planets">Planetas</option>
+            <option value="people">Pessoas</option>
+            <option value="species">Especies</option>
+            <option value="starships">Naves</option>
+            <option value="films">Filmes</option>
+            <option value="vehicles">Veiculos</option>
+        </select>
+        <input id="fazerbusca" type="button" value="ok">
+    </div>
+    
+    
+    <div id="menu"> 
+    	<ul>
+            <li id="li_planetas"> <a href="#planetas"> Planetas </a></li>
+            <li id="li_pessoas">  <a href="#pessoas"> Pessoas </a></li>
+            <li id="li_especies"> <a href="#especies"> Especies </a></li>
+            <li id="li_naves">    <a href="#naves"> Naves </a></li>
+            <li id="li_filmes">   <a href="#filmes"> Filmes </a></li>
+            <li id="li_veiculos"> <a href="#veiculos"> Veiculos </a></li>
+        </ul> 
+    </div>
+    
+    <div id="div_home"> <h1>O que é SWAPI?</h1>
+        A API de Star Wars, ou "swapi" (Swah-pee) é a primeira fonte de dados quantificada e programaticamente acessível do mundo para todos os dados do universo canônico de Star Wars! Nós pegamos todo o material contextual rico do universo e formatamos em algo mais fácil de consumir com software. Então nós fomos e colocamos uma API na frente para que você possa acessar tudo!
+	</div>
+	
+    <div class="oculta" id="div_planetas">
+        <div class="lista_itens">
+            <ol>
+                <li v-for="elemento in arrey">
+                    {{ elemento.name }}
+                </li>
+            </ol>
+        </div>
+
+        <div class="item_detalhe" >
+            <div><b>Nome: </b>{{elemento.name}}</div>
+            <div><b>Duração do dia: </b>{{elemento.rotation_period}}</div>
+            <div><b>Duração do ano: </b>{{elemento.orbital_period}}</div>
+            <div><b>Diametro: </b>{{elemento.diameter}}</div>
+            <div><b>Clima: </b>{{elemento.climate}}</div>
+            <div><b>Gravidade: </b>{{elemento.gravity}}</div>
+            <div><b>Topologia: </b>{{elemento.terrain}}</div>
+            <div><b>Área coberta por água: </b>{{elemento.surface_water}}</div>
+            <div><b>Populaçâo: </b>{{elemento.population}}</div>
+        </div>
+
+    </div>
+    
+    
+    <div class="oculta" id="div_pessoas">
+        <div class="lista_itens">
+            <ol>
+                <li v-for="elemento in arrey">
+                    {{ elemento.name }}
+                </li>
+            </ol>
+        </div>
+
+        <div class="item_detalhe" >
+            <div><b>Nome: </b>{{elemento.name}}</div>
+            <div><b>Altura: </b>{{elemento.height}}</div>
+            <div><b>Peso: </b>{{elemento.mass}}</div>
+            <div><b>Cor do cabelo: </b>{{elemento.hair_color}}</div>
+            <div><b>Cor da pele: </b>{{elemento.skin_color}}</div>
+            <div><b>Cor dos olhos: </b>{{elemento.eye_color}}</div>
+            <div><b>Ano de nascimento: </b>{{elemento.birth_year}}</div>
+            <div><b>Gênero: </b>{{elemento.gender}}</div>
+            <div><b>Terra natal: </b>{{elemento.homeworld}}</div>
+        </div>
+
+    </div>
+
+    <div class="oculta" id="div_especies">
+        <div class="lista_itens">
+            <ol>
+                <li v-for="elemento in arrey">
+                    {{ elemento.name }}
+                </li>
+            </ol>
+        </div>
+
+        <div class="item_detalhe" >
+            <div><b>Nome: </b>{{elemento.name}}</div>
+            <div><b>Classificação: </b>{{elemento.classification}}</div>
+            <div><b>Designação: </b>{{elemento.designation}}</div>
+            <div><b>Altura media: </b>{{elemento.average_height}}</div>
+            <div><b>Cor da pele: </b>{{elemento.skin_colors}}</div>
+            <div><b>Cor dos olhos: </b>{{elemento.eye_colors}}</div>
+            <div><b>Espectativa de vida: </b>{{elemento.average_lifespan}}</div>
+            <div><b>Terra natal: </b>{{elemento.homeworld}}</div>
+            <div><b>Lingua: </b>{{elemento.language}}</div>
+        </div>
+
+    </div>
+
+    <div class="oculta" id="div_naves">
+        <div class="lista_itens">
+            <ol>
+                <li v-for="elemento in arrey">
+                    {{ elemento.name }}
+                </li>
+            </ol>
+        </div>
+
+        <div class="item_detalhe" >
+            <div><b>Nome: </b>{{elemento.name}}</div>
+            <div><b>Modelo: </b>{{elemento.model}}</div>
+            <div><b>Fabricante: </b>{{elemento.manufacturer}}</div>
+            <div><b>Custo medio: </b>{{elemento.cost_in_credits}}</div>
+            <div><b>Comprimento: </b>{{elemento.length}}</div>
+            <div><b>Velocidade: </b>{{elemento.max_atmosphering_speed}}</div>
+            <div><b>Equipe tecnica: </b>{{elemento.crew}}</div>
+            <div><b>Passageiros: </b>{{elemento.passengers}}</div>
+            <div><b>Capacidade de carga: </b>{{elemento.cargo_capacity}}</div>
+            <div><b>Consumo: </b>{{elemento.consumables}}</div>
+            <div><b>Avaliação de velocidade: </b>{{elemento.hyperdrive_rating}}</div>
+            <div><b>MGLT: </b>{{elemento.MGLT}}</div>
+            <div><b>Classe da nave: </b>{{elemento.starship_class}}</div>
+        </div>
+
+    </div>
+
+    <div class="oculta" id="div_filmes">
+        <div class="lista_itens">
+            <ol>
+                <li v-for="elemento in arrey">
+                    {{ elemento.title }}
+                </li>
+            </ol>
+        </div>
+
+        <div class="item_detalhe" >
+            <div><b>Titulo: </b>{{elemento.title}}</div>
+            <div><b>Episodio: </b>{{elemento.episode_id}}</div>
+            <div><b>Diretor: </b>{{elemento.director}}</div>
+            <div><b>produtor: </b>{{elemento.producer}}</div>
+            <div><b>Data de lançamento: </b>{{elemento.release_date}}</div>
+        </div>
+
+    </div>
+
+    <div class="oculta" id="div_veiculos">
+        <div class="lista_itens">
+            <ol>
+                <li v-for="elemento in arrey">
+                    {{ elemento.name }}
+                </li>
+            </ol>
+        </div>
+
+        <div class="item_detalhe" >
+            <div><b>Nome: </b>{{elemento.name}}</div>
+            <div><b>Modelo: </b>{{elemento.model}}</div>
+            <div><b>Fabricante: </b>{{elemento.manufacturer}}</div>
+            <div><b>Custo medio: </b>{{elemento.cost_in_credits}}</div>
+            <div><b>Comprimento: </b>{{elemento.length}}</div>
+            <div><b>Velocidade: </b>{{elemento.max_atmosphering_speed}}</div>
+            <div><b>Equipe tecnica: </b>{{elemento.crew}}</div>
+            <div><b>Passageiros: </b>{{elemento.passengers}}</div>
+            <div><b>Capacidade de carga: </b>{{elemento.cargo_capacity}}</div>
+            <div><b>Consumo: </b>{{elemento.consumables}}</div>
+            <div><b>Avaliação de velocidade: </b>{{elemento.hyperdrive_rating}}</div>
+            <div><b>Pilotos: </b>{{elemento.pilots}}</div>
+        </div>
+
+    </div>
+
+    <div class="oculta" id="div_resultadobusca">
+        <h1>Resultado da Busca</h1>
+
+        <div id="resultado_planets" class="item_detalhe resultado">
+            <div v-for="elemento in meus_elementos">
+                <div><b>Nome: </b>{{elemento.name}}</div>
+                <div><b>Duração do dia: </b>{{elemento.rotation_period}}</div>
+                <div><b>Duração do ano: </b>{{elemento.orbital_period}}</div>
+                <div><b>Diametro: </b>{{elemento.diameter}}</div>
+                <div><b>Clima: </b>{{elemento.climate}}</div>
+                <div><b>Gravidade: </b>{{elemento.gravity}}</div>
+                <div><b>Topologia: </b>{{elemento.terrain}}</div>
+                <div><b>Área coberta por água: </b>{{elemento.surface_water}}</div>
+                <div><b>Populaçâo: </b>{{elemento.population}}</div>
+                <hr>
+            </div>
+        </div>
+
+        <div id="resultado_people" class="item_detalhe resultado" >
+            <div v-for="elemento in meus_elementos">
+                <div><b>Nome: </b>{{elemento.name}}</div>
+                <div><b>Altura: </b>{{elemento.height}}</div>
+                <div><b>Peso: </b>{{elemento.mass}}</div>
+                <div><b>Cor do cabelo: </b>{{elemento.hair_color}}</div>
+                <div><b>Cor da pele: </b>{{elemento.skin_color}}</div>
+                <div><b>Cor dos olhos: </b>{{elemento.eye_color}}</div>
+                <div><b>Ano de nascimento: </b>{{elemento.birth_year}}</div>
+                <div><b>Gênero: </b>{{elemento.gender}}</div>
+                <div><b>Terra natal: </b>{{elemento.homeworld}}</div>
+                <hr>
+            </div>
+        </div>
+
+        <div id="resultado_species" class="item_detalhe resultado" >
+            <div v-for="elemento in meus_elementos">
+                <div><b>Nome: </b>{{elemento.name}}</div>
+                <div><b>Classificação: </b>{{elemento.classification}}</div>
+                <div><b>Designação: </b>{{elemento.designation}}</div>
+                <div><b>Altura media: </b>{{elemento.average_height}}</div>
+                <div><b>Cor da pele: </b>{{elemento.skin_colors}}</div>
+                <div><b>Cor dos olhos: </b>{{elemento.eye_colors}}</div>
+                <div><b>Espectativa de vida: </b>{{elemento.average_lifespan}}</div>
+                <div><b>Terra natal: </b>{{elemento.homeworld}}</div>
+                <div><b>Lingua: </b>{{elemento.language}}</div>
+                <hr>
+            </div>
+        </div>
+
+        <div id="resultado_starships" class="item_detalhe resultado" >
+            <div v-for="elemento in meus_elementos">
+                <div><b>Nome: </b>{{elemento.name}}</div>
+                <div><b>Modelo: </b>{{elemento.model}}</div>
+                <div><b>Fabricante: </b>{{elemento.manufacturer}}</div>
+                <div><b>Custo medio: </b>{{elemento.cost_in_credits}}</div>
+                <div><b>Comprimento: </b>{{elemento.length}}</div>
+                <div><b>Velocidade: </b>{{elemento.max_atmosphering_speed}}</div>
+                <div><b>Equipe tecnica: </b>{{elemento.crew}}</div>
+                <div><b>Passageiros: </b>{{elemento.passengers}}</div>
+                <div><b>Capacidade de carga: </b>{{elemento.cargo_capacity}}</div>
+                <div><b>Consumo: </b>{{elemento.consumables}}</div>
+                <div><b>Avaliação de velocidade: </b>{{elemento.hyperdrive_rating}}</div>
+                <div><b>MGLT: </b>{{elemento.MGLT}}</div>
+                <div><b>Classe da nave: </b>{{elemento.starship_class}}</div>
+                <hr>
+            </div>
+        </div>
+
+        <div id="resultado_films" class="item_detalhe resultado" >
+            <div v-for="elemento in meus_elementos">
+                <div><b>Titulo: </b>{{elemento.title}}</div>
+                <div><b>Episodio: </b>{{elemento.episode_id}}</div>
+                <div><b>Diretor: </b>{{elemento.director}}</div>
+                <div><b>produtor: </b>{{elemento.producer}}</div>
+                <div><b>Data de lançamento: </b>{{elemento.release_date}}</div>
+                <hr>
+            </div>
+        </div>
+
+        <div id="resultado_vehicles" class="item_detalhe resultado" >
+            <div v-for="elemento in meus_elementos">
+                <div><b>Nome: </b>{{elemento.name}}</div>
+                <div><b>Modelo: </b>{{elemento.model}}</div>
+                <div><b>Fabricante: </b>{{elemento.manufacturer}}</div>
+                <div><b>Custo medio: </b>{{elemento.cost_in_credits}}</div>
+                <div><b>Comprimento: </b>{{elemento.length}}</div>
+                <div><b>Velocidade: </b>{{elemento.max_atmosphering_speed}}</div>
+                <div><b>Equipe tecnica: </b>{{elemento.crew}}</div>
+                <div><b>Passageiros: </b>{{elemento.passengers}}</div>
+                <div><b>Capacidade de carga: </b>{{elemento.cargo_capacity}}</div>
+                <div><b>Consumo: </b>{{elemento.consumables}}</div>
+                <div><b>Avaliação de velocidade: </b>{{elemento.hyperdrive_rating}}</div>
+                <div><b>Pilotos: </b>{{elemento.pilots}}</div>
+                <hr>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="SW.js"></script>
+</body>
+</html>

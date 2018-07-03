@@ -1,0 +1,151 @@
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#header {
+	    text-align: center;
+    background-image: url(bg.jpg);
+}
+
+#menu li {
+    border: 1px solid indianred;
+    padding: 5px;
+    margin: 5px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    list-style: none;
+    display: table-cell;
+}
+
+#menu ul {
+    padding: 0;
+    display: table;
+    width: 100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin: 10px 22px 10px 0px;
+}
+
+#divbusca {
+    height: 60px;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 20px;
+}
+
+#categoria,
+#divbusca input {
+    height: 30px;
+    border: 1px solid black;
+	padding-left: 6px;
+}
+#divbusca input[type="text"] {
+    width: 60%;
+}
+
+#div_home {
+    padding: 10px;
+
+}
+    
+#div_planetas {
+    padding: 10px;
+}
+    
+#div_pessoas {
+    padding: 10px;
+}
+    
+#div_especies {
+    padding: 10px;
+}
+    
+#div_naves {
+    padding: 10px;
+} 
+    
+#div_filmes{
+    padding: 10px;
+}
+
+#div_veiculos{
+    padding: 10px;
+}
+
+.oculta {
+	display:none;
+}
+
+.selecionada, .selecionada a {
+    background-color: indianred;
+    color: white;
+}
+
+.lista_itens {
+    border: 1px solid black;
+    width: 150px;
+    float: left;
+    margin-right: 25px;
+}
+
+.item_detalhe {
+    border: 1px solid black;
+    float: left;
+    padding: 10px;
+    margin-top: 0;
+}
+
+.item_detalhe > div {
+    padding-bottom: 10px;
+}
+
+.lista_itens li {
+    cursor: pointer;
+    min-height: 25px;
+    line-height: 25px;
+}
+
+.lista_itens li:hover {
+    background-color: indianred;
+    color: white;
+    margin-left: -40px;
+    padding-left: 40px;
+}
+
+.resultado {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
