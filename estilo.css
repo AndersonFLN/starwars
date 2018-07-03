@@ -1,11 +1,15 @@
 
 body {
     padding: 0;
-    margin: 0;
+    margin: 20;
+    background-image: url(bg.jpg);
 }
 
 #header {
 	    text-align: center;
+    
+
+
     background-image: url(bg.jpg);
 }
 
@@ -13,11 +17,20 @@ body {
     border: 1px solid indianred;
     padding: 5px;
     margin: 5px;
-    height: 30px;
+    height: 100px;
     line-height: 30px;
     text-align: center;
     list-style: none;
     display: table-cell;
+    background-image: url(bg.jpg);
+
+}
+
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
 }
 
 #menu ul {
@@ -28,6 +41,7 @@ body {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     margin: 10px 22px 10px 0px;
+
 }
 
 #divbusca {
@@ -35,6 +49,7 @@ body {
     vertical-align: middle;
     text-align: center;
     padding-top: 20px;
+    background-image: url(bg.jpg);
 }
 
 #categoria,
@@ -42,18 +57,29 @@ body {
     height: 30px;
     border: 1px solid black;
 	padding-left: 6px;
+
 }
 #divbusca input[type="text"] {
     width: 60%;
+
 }
 
 #div_home {
     padding: 10px;
+    color: white;
 
+
+}
+
+#div_home h1 {
+    color: white;
+    text-align: center;
 }
     
 #div_planetas {
     padding: 10px;
+
+
 }
     
 #div_pessoas {
@@ -87,9 +113,10 @@ body {
 
 .lista_itens {
     border: 1px solid black;
-    width: 150px;
+    width: 180px;
     float: left;
     margin-right: 25px;
+    color:white;
 }
 
 .item_detalhe {
@@ -97,6 +124,7 @@ body {
     float: left;
     padding: 10px;
     margin-top: 0;
+    color:white;
 }
 
 .item_detalhe > div {
@@ -118,6 +146,7 @@ body {
 
 .resultado {
     width: 100%;
+
 }
 
 
